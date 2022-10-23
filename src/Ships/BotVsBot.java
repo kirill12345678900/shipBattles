@@ -15,10 +15,20 @@ public class BotVsBot {
             int x = (int) (Math.random() * 10);
             System.out.println("Введи координаты по оси Y: ");
             int y = (int) (Math.random() * 10);
+            PlayerVsPlayer.logger.info("Робот " + playerName + "ввел координаты корабля по оси X и Y " + x + " " + y);
+
             System.out.println("Выбери в каком расположении будет корабль: ");
             System.out.println("1. По вертикали: ");
             System.out.println("2. По горизонтали: ");
             int direction = (int) (Math.random() * 2 + 1);
+
+            if(direction == 1){
+                PlayerVsPlayer.logger.info("Робот ставит"+ playerName + deck + "-х корабль по вертикали" );
+            }
+            else {
+                PlayerVsPlayer.logger.info("Робот ставит"+ playerName + deck + "-х корабль по горизонтали" );
+            }
+
             if (!CheckShips.isAvailable(x, y, deck, direction, battlefield)) {
                 System.out.println("Неправильные координаты");
                 continue;
@@ -73,11 +83,14 @@ public class BotVsBot {
             int x = (int) (Math.random() * 10);
             System.out.println("Введи координаты по оси Y: ");
             int y = (int) (Math.random() * 10);
+            PlayerVsPlayer.logger.info("Робот " + playerName + " сделал выстрел по координатам " + x + " " + y + " ");
             if (battlefield[x][y] == 1) {
                 System.out.println("Попадание! Ты можешь сделать выстрел еще раз!");
+                PlayerVsPlayer.logger.info("Робот " + playerName + " попал по кораблю противника!");
                 monitor[x][y] = 2;
             } else {
                 System.out.println("Не попал :(, ход за твоим противником!");
+                PlayerVsPlayer.logger.info("Робот " + playerName + " промазал по кораблю противника!");
                 monitor[x][y] = 1;
                 break;
             }

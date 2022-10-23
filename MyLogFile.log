@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-10-23T12:35:13.925170300Z</date>
+  <millis>1666528513925</millis>
+  <nanos>170300</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>INFO</level>
+  <class>Ships.PlayerVsPlayer</class>
+  <method>placeShips</method>
+  <thread>1</thread>
+  <message>Игрок ввел координаты корабля по оси X 4 Anton</message>
+</record>
+<record>
+  <date>2022-10-23T12:35:14.502944800Z</date>
+  <millis>1666528514502</millis>
+  <nanos>944800</nanos>
+  <sequence>1</sequence>
+  <logger>MyLog</logger>
+  <level>INFO</level>
+  <class>Ships.PlayerVsPlayer</class>
+  <method>placeShips</method>
+  <thread>1</thread>
+  <message>Игрок ввел координаты корабля по оси X 3 Anton</message>
+</record>
+<record>
+  <date>2022-10-23T12:35:16.046566800Z</date>
+  <millis>1666528516046</millis>
+  <nanos>566800</nanos>
+  <sequence>2</sequence>
+  <logger>MyLog</logger>
+  <level>INFO</level>
+  <class>Ships.PlayerVsPlayer</class>
+  <method>placeShips</method>
+  <thread>1</thread>
+  <message>Игрок ставитAnton4-х корабль по вертикали</message>
+</record>
+</log>

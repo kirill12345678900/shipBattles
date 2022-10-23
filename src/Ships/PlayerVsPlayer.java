@@ -1,11 +1,18 @@
 package Ships;
 
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+
 import static Ships.BattleShip.scanner;
 public class PlayerVsPlayer {
 
+    public static Logger logger = Logger.getLogger("MyLog");
+    public static void placeShips(String playerName, int[][] battlefield) throws IOException {
 
-    public static void placeShips(String playerName, int[][] battlefield) {
+        //FileHandler fh = new FileHandler("MyLogFile.log");
+        //logger.addHandler(fh);
         int deck = 4;
         while (deck >= 1) {
             System.out.println();
@@ -18,10 +25,17 @@ public class PlayerVsPlayer {
             int x = scanner.nextInt();
             System.out.println("Введи координаты по оси Y: ");
             int y = scanner.nextInt();
+            logger.info("Игрок " + playerName + "ввел координаты корабля по оси X и Y " + x + " " + y);
             System.out.println("Выбери в каком расположении будет корабль: ");
             System.out.println("1. По вертикали: ");
             System.out.println("2. По горизонтали: ");
             int direction = scanner.nextInt();
+            if(direction == 1){
+                logger.info("Игрок ставит"+ playerName + deck + "-х корабль по вертикали" );
+            }
+            else {
+                logger.info("Игрок ставит"+ playerName + deck + "-х корабль по горизонтали" );
+            }
             if (!CheckShips.isAvailable(x, y, deck, direction, battlefield)) {
                 System.out.println("Неправильные координаты");
                 continue;
@@ -80,11 +94,14 @@ public class PlayerVsPlayer {
             int x = scanner.nextInt();
             System.out.println("Введи координаты по оси Y: ");
             int y = scanner.nextInt();
+            logger.info("Игрок " + playerName + " сделал выстрел по координатам " + x + " " + y + " ");
             if (battlefield[x][y] == 1) {
                 System.out.println("Попадание! Ты можешь сделать выстрел еще раз!");
+                logger.info("Игрок " + playerName + " попал по кораблю противника!");
                 monitor[x][y] = 2;
             } else {
                 System.out.println("Не попал :(, ход за твоим противником!");
+                logger.info("Игрок " + playerName + " промазал по кораблю противника!");
                 monitor[x][y] = 1;
                 break;
             }

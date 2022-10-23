@@ -1,9 +1,11 @@
 package Ships;
 
+import java.io.IOException;
+
 import static Ships.BattleShip.*;
 
 public class Menu {
-    public static void menu() {
+    public static void menu() throws IOException {
         System.out.println("Введите 1, чтобы войти в режим игры <Игрок против игрока>!");
         System.out.println("Введите 2, чтобы войти в режим игры <Игрок против робота>!");
         System.out.println("Введите 3, чтобы войти в режим игры <Робот против робота>!");
